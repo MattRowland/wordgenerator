@@ -18,6 +18,9 @@ def main(argv):
          inputword = arg.lower()
         elif opt in ("-o", "--outputfile"):
          outputfile = arg
+    if inputword == '' or outputfile == '':
+        print(usageexample)
+        sys.exit(2)
     with open(outputfile, 'w') as f:
         traverse_word(inputword, 0, f)
 
