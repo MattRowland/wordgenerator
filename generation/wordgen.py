@@ -22,7 +22,9 @@ def main(argv):
         print(usageexample)
         sys.exit(2)
     with open(outputfile, 'w') as f:
-        traverse_word(inputword, 0, f)
+        words = inputword.split(',')
+        for word in words:
+            traverse_word(word, 0, f)
 
 def traverse_word(inputword, index, outputfile):
     outputfile.write(inputword + '\n')
@@ -57,14 +59,14 @@ def character_transpose_dict():
         ('p',['P']),
         ('q',['Q','9']),
         ('r',['R']),
-        ('s',['S','5','z','Z']),
+        ('s',['S','5','z','Z','$']),
         ('t',['T','+','7']),
         ('u',['U']),
         ('v',['V','<','>']),
         ('w',['W','uu']),
         ('x',['X','%','xx','XX','xX','Xx']),
         ('y',['Y','?']),
-        ('z',['Z','s','S'])
+        ('z',['Z','s','S','$'])
     ])
 
 transpose_dict = character_transpose_dict()
